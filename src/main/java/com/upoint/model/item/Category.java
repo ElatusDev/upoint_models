@@ -1,4 +1,4 @@
-package com.upoint.model;
+package com.upoint.model.item;
 
 import java.util.List;
 
