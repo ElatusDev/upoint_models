@@ -2,7 +2,7 @@ package com.upoint.model.preparation;
 
 import java.util.List;
 
-import com.upoint.model.item.Product;
+import com.upoint.model.product.Product;
 
 public class Preparation {
 

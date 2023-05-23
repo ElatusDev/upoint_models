@@ -1,7 +1,7 @@
 package com.upoint.model.inventory;
 
 
-import com.upoint.model.item.Product;
+import com.upoint.model.product.Product;
 
 public class OnStockProduct extends Product {
 	
