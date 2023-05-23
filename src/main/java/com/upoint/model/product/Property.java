@@ -2,12 +2,38 @@ package com.upoint.model.product;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Scope("prototype")
+@Component
+@Entity
+@Table(name = "product_property", catalog = "catalog_db")
 public class Property {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@Column(unique = true, name = "property_name", nullable = false, length = 15)
 	private String name;
+	
+	@Column(name = "property_unit", unique = true, nullable = false, length = 10)
 	private String unit;
+	
+	@ElementCollection
 	private List<String> availableUnits;
-	private Class <?> valueType;
+	
+	@Column(name = "property_type", nullable = false, length = 10 )
+	private String  valueType;
 	
 	
 	public Integer getId() {
@@ -35,10 +61,10 @@ public class Property {
 	public void setAvailableUnits(List<String> availableUnits) {
 		this.availableUnits = availableUnits;
 	}
-	public Class<?> getValueType() {
+	public String getValueType() {
 		return valueType;
 	}
-	public void setValueType(Class<?> valueType) {
+	public void setValueType(String valueType) {
 		this.valueType = valueType;
 	}
 	
