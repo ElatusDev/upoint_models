@@ -11,13 +11,14 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Scope("prototype")
 @Component
 @Entity 
-@Table(name = "product_category", catalog = "catalog_db") 
+@Table(name = "product_category") 
 public class Category {
 	
 	@Id
@@ -30,8 +31,11 @@ public class Category {
 	@Column(name = "product_description", nullable = false, length = 300)
 	private String description;
 	
+	
 	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "category_parent_id", nullable = false)
 	private List <Category> children;
+
 	
 	
 	public Integer getId() {

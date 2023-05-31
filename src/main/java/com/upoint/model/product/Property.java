@@ -8,9 +8,11 @@ import org.springframework.stereotype.Component;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
 
@@ -18,20 +20,21 @@ import jakarta.persistence.Table;
 @Scope("prototype")
 @Component
 @Entity 
-@Table(name = "product_property", catalog = "catalog_db") 
+@Table(name = "product_property") 
 public class Property {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(unique = true, name = "property_name", nullable = false, length = 15)
+	@Column(name = "property_name", nullable = false, length = 15)
 	private String name;
 	
-	@Column(name = "property_unique", nullable = false, length = 10, unique = true)
+	@Column(name = "property_unit", nullable = false, length = 10)
 	private String unit;
 
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
+	@JoinColumn(name = "property_available_unit_id")
 	private List<String> availableUnits;
 	
 	@Column(name = "property_type", nullable = false, length = 10)
