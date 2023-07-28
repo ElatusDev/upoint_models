@@ -1,17 +1,16 @@
 package com.upoint.model.hr;
 
 import java.util.List;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.OneToMany;
 
-import com.upoint.model.user.User;
-
+@MappedSuperclass
 public class Employee {
+
 	
-	private Long id;
-	private List<Employee> subordinate; 
+	@ManyToOne
 	private Position position;
-	private User user;
-	private Name name;
-	
 	
 	
 	

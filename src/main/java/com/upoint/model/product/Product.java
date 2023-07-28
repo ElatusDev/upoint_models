@@ -43,6 +43,9 @@ public class Product  {
 	@Column(nullable = false)
 	private Float weight;
 	
+	@Column(name = "company_id", nullable = false)
+	private Long companyId;
+	
 	
 	
 	public Float getWeight() {
@@ -69,6 +72,12 @@ public class Product  {
 	}
 	public void setProperties(List<Property> properties) {
 		this.properties = properties;
+	}
+	public void setCompanyId(Long companyId) {
+		this.companyId = companyId;
+	}
+	public Long getCompanyId() {
+		return companyId;
 	}
 	
 	

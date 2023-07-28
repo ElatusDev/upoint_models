@@ -23,17 +23,18 @@ public class Category {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "category_id")
 	private Integer id;
 	
-	@Column(name = "product_name", nullable = false, length = 25)
+	@Column(name = "category_name", nullable = false, length = 25)
 	private String name;
 	
-	@Column(name = "product_description", nullable = false, length = 300)
+	@Column(name = "category_description", nullable = false, length = 300)
 	private String description;
 	
 	
 	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_parent_id", nullable = false)
+	@JoinColumn(name = "parent_category_id", nullable = true)
 	private List <Category> children;
 
 	
