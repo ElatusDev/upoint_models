@@ -1,4 +1,4 @@
-package com.upoint.model.sale;
+package com.upoint.model.salesroom;
 
 import java.util.List;
 

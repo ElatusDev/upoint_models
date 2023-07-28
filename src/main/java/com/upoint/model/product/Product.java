@@ -12,6 +12,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -19,25 +20,37 @@ import jakarta.persistence.Table;
 @Scope("prototype")
 @Component
 @Entity
-@Table(name = "product", catalog = "catalog_db")
+@Table(name = "product")
 public class Product  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(unique = true, nullable = false, length = 16)
+	@Column( nullable = false, length = 16)
 	private String code;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "product_category_id", nullable = false)
 	private Category category;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "product_property_id", nullable = false)
 	private List <Property> properties; 
 	
 	@Column(nullable = false)
 	private Float weight;
 	
+	@Column(name = "company_id", nullable = false)
+	private Long companyId;
+	
+	public Long getCompanyId() {
+		return companyId;
+	}
+	
+	public void setCompanyId(Long companyId) {
+		this.companyId = companyId;
+	}
 	
 	
 	public Float getWeight() {
@@ -46,7 +59,7 @@ public class Product  {
 	public void setWeight(Float weight) {
 		this.weight = weight;
 	}
-	public String getCode() {
+	public String getCode() { 
 		return code;
 	}
 	public void setCode(String code) {

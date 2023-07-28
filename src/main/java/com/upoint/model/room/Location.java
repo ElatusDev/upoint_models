@@ -1,9 +1,19 @@
 package com.upoint.model.room;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document
 public class Location {
 
+	@Id
 	private Long id;
+	
+	
 	private Integer x;
+	
+	
 	private Integer y;
 	
 	

@@ -1,16 +1,30 @@
 package com.upoint.model.room;
 
 import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import com.upoint.model.stockroom.StockProduct;
 
-import com.upoint.model.product.Product;
-
+@Document
 public class Section {
 
+	
+	@Id
 	private Long id;
+	
+	
 	private String label;
+	
+	
 	private String color; 
+	
+	
 	private Integer capacity;
-	private List<Product> products;
+	
+	
+	private List<StockProduct> products;
+	
+	
 	private Location location;
 	
 	

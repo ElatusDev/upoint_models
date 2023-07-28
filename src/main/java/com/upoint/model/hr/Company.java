@@ -1,15 +1,15 @@
 package com.upoint.model.hr;
 
 import java.util.List;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.OneToMany;
 
-public class Company {
+
+@MappedSuperclass
+public   class Company {
+		
 	
-	private Long id;
-	private Employee rootEmployee; 
-	private Position rootPosition;
-	private CompanyInfo companyInfo;
-	
-	
-	
+	@OneToMany
+	private List <Position> rootPositions;
 
 }
