@@ -30,6 +30,9 @@ public class Product  {
 	@Column( nullable = false, length = 16)
 	private String code;
 	
+	@Column(name = "product_name", nullable = false, length = 25)
+	private String name;
+	
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "product_category_id", nullable = false)
 	private Category category;
@@ -37,9 +40,6 @@ public class Product  {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "product_property_id", nullable = false)
 	private List <Property> properties; 
-	
-	@Column(nullable = false)
-	private Float weight;
 	
 	@Column(name = "company_id", nullable = false)
 	private Long companyId;
@@ -53,12 +53,6 @@ public class Product  {
 	}
 	
 	
-	public Float getWeight() {
-		return weight;
-	}
-	public void setWeight(Float weight) {
-		this.weight = weight;
-	}
 	public String getCode() { 
 		return code;
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -32,7 +33,8 @@ public class Property {
 	private String unit;
 	
 	@ElementCollection(fetch = FetchType.EAGER)
-	@JoinColumn(name = "property_avaliable_unit_id")
+	@CollectionTable(name =  "property_available unit",
+	joinColumns = {@JoinColumn(name = "property_available_unit_id"), @JoinColumn(name = "available_unit", nullable = true)})
 	private List<String> availableUnits;
 	
 	@Column(name = "property_type", nullable = false, length = 10 )
