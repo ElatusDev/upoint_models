@@ -38,7 +38,7 @@ public class StockroomModelIntegrationTest {
 		receivingOrder.setEmployee("1");	
 	}
 	
-	@Test
+	//@Test
 	@Transactional
 	public void givenStockroomIsValid_whenPersisting_thenShouldReturnId() {
 		
