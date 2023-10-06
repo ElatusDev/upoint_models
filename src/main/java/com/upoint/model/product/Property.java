@@ -24,6 +24,7 @@ public class Property {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "property_id")
 	private Integer id;
 	
 	@Column( name = "property_name", nullable = false, length = 15)
@@ -33,8 +34,9 @@ public class Property {
 	private String unit;
 	
 	@ElementCollection(fetch = FetchType.EAGER)
-	@CollectionTable(name =  "property_available unit",
-	joinColumns = {@JoinColumn(name = "property_available_unit_id"), @JoinColumn(name = "available_unit", nullable = true)})
+	@CollectionTable(name =  "property_available_unit",
+	joinColumns = {@JoinColumn(name = "property_available_unit_id")})
+	@Column(name = "available_unit")
 	private List<String> availableUnits;
 	
 	@Column(name = "property_type", nullable = false, length = 10 )
