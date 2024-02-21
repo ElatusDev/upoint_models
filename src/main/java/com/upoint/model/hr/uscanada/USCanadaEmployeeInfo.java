@@ -20,6 +20,7 @@ public class USCanadaEmployeeInfo extends EmployeeInfo {
 	
 	@OneToOne
 	private USCanadaAddress address;
-
 	
+	@OneToOne
+	private USCanadaName name;
 }

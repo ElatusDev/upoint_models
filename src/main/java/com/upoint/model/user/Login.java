@@ -2,7 +2,6 @@ package com.upoint.model.user;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +18,7 @@ public class Login {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "long_id")
+	@Column(name = "user_login")
 	private Long id;
 	
 	@Column(name = "user_email", nullable = false, length = 12 )

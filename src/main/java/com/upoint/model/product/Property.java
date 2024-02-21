@@ -14,6 +14,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Scope("prototype")
@@ -42,7 +44,18 @@ public class Property {
 	@Column(name = "property_type", nullable = false, length = 10 )
 	private String  valueType;
 	
+	@OneToMany(mappedBy = "properties")
+	private List<Product> products;
 	
+	
+	
+	
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 	public Integer getId() {
 		return id;
 	}

@@ -6,10 +6,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
-
 import com.upoint.model.product.Product;
-import com.upoint.model.util.MsgError;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -24,9 +21,6 @@ public class ProductModelTest {
 	
 	@Autowired
 	private ApplicationContext context;
-	
-	@Autowired
-	private MsgError msgError;
 	
 	private EntityManager manager;
 	

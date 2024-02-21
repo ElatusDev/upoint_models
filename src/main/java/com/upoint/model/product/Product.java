@@ -3,6 +3,7 @@ package com.upoint.model.product;
 import java.util.List;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -35,15 +36,15 @@ public class Product  {
 	@Column(name = "product_description", nullable = true, length = 250)
 	private String description;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "product_category_id", nullable = false)
 	private Category category;
 	
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "product_property", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "property_id"))
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "product_property_association", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "property_id"))
 	private List <Property> properties; 
 	
-	@Column(name = "product_company_id", nullable = false)
+	@Column(name = "product_company_id")
 	private Long companyId;
 	
 	public Long getCompanyId() {

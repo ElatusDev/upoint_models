@@ -4,26 +4,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.test.context.ContextConfiguration;
-
 import com.upoint.model.hr.mx.MexicanName;
-import com.upoint.model.testapp.TestApplication;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 
-@DataJpaTest
-@EntityScan(basePackages = {"com.upoint.model.hr"})
-@PropertySource("classpath:dev-config/dev-upoint_hr.properties")
-@ComponentScan(basePackages  = {"com.upoint.model.hr"})
-@ContextConfiguration(classes = TestApplication.class)
-public class MexicanNameModelTest {
+
+
+public abstract class BaseMexicanNameModelTest {
 
 	
 	@Autowired
@@ -47,20 +36,21 @@ public class MexicanNameModelTest {
 		mexicanName.setId(null);
 	}
 	
-	private void executeTransaction() {
+	private void executeTransaction(EntityManager manager, MexicanName mexicanName) {
 		EntityTransaction transaction = manager.getTransaction();
 		transaction.begin();
 		manager.persist(mexicanName);
 		transaction.commit();
 		
+		
 	}
 	@Test
 	void givenMexicanNameIsValid_whenPersisting_ThenReturnId() {
-		//init method provides valid object
-	
+		
+		
 		Integer expectedId = 1;
 		
-		executeTransaction();
+		executeTransaction(manager, mexicanName);
 		
 		Assertions.assertEquals(expectedId, mexicanName.getId());
 	}

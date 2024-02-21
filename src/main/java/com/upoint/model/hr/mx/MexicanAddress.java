@@ -19,13 +19,13 @@ public class MexicanAddress extends Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "mexican_address_interior_number")
+	@Column(name = "mexican_address_interior_number", nullable = false, length = 4)
 	private String interiorNumber;
 	
-	@Column(name = "mexican_address_exterior_number")
+	@Column(name = "mexican_address_exterior_number", nullable = false, length = 4)
 	private String exteriorNumber;
 	
-	@Column(name = "mexican_address_neighborhood")
+	@Column(name = "mexican_address_neighborhood", nullable = false, length = 50)
 	private String neighborhood;
 	
 	@Override
