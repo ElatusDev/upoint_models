@@ -20,8 +20,11 @@ public class USCanadaEmployeeInfo extends EmployeeInfo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "us_canada_employee_info")
+	@Column(name = "us_canada_employee_info_id")
 	private Long id;
+	
+	@OneToOne
+	private USCanadaName name;
 
 	@OneToOne
 	private USCanadaAddress address;

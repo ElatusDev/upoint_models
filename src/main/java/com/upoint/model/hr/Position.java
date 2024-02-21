@@ -18,7 +18,7 @@ public class Position {
 	@Column(name = "position_id")
 	private Long id;
 	
-	@Column(name = "position_name")
+	@Column(name = "position_name", nullable = false, length = 35)
 	private String name;
 	
 	@OneToMany

@@ -18,7 +18,7 @@ public class USCanadaAddress extends Address {
 	@Column(name = "us_canada_address_id")
 	private Long id;
 	
-	@Column(name = "us_canada_address_number")
+	@Column(name = "us_canada_address_number", length = 4, nullable = false)
 	private String number;
 	
 	@Override 
