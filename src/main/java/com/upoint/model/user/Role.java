@@ -28,7 +28,5 @@ public class Role {
 	
 	@Column(name = "role_delete_acces", nullable = false)
 	private Boolean deleteAcces;
-	
-	
-	
+
 }
