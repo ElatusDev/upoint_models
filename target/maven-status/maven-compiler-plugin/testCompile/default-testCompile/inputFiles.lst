@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/monica/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/unit/stockroom/StockroomModelTest.java
 /Users/monica/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/integration/product/ProductModelTest.java
 /Users/monica/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/product/BaseCategoryModelTest.java
@@ -7,3 +8,14 @@
 /Users/monica/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/util/MsgError.java
 /Users/monica/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/hr/MexicanNameModelTest.java
 /Users/monica/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/unit/product/CategoryModelTest.java
+=======
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/testapp/TestApplication.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/integration/stockroom/StockRoomModelIntegrationTest.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/util/MsgError.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/integration/product/ProductModelTest.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/unit/product/CategoryModelTest.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/product/BaseCategoryModelTest.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/hr/MexicanNameModelTest.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/unit/stockroom/StockroomModelTest.java
+/Users/augustomartinez/eclipse-workspace/upoint-models/src/test/java/com/upoint/model/integration/product/CategoryModelIntegrationTest.java
+>>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7

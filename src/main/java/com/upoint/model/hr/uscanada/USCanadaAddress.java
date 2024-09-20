@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+<<<<<<< HEAD
 @Table(name= "us_canada_address")
 public class USCanadaAddress extends Address {
 	
@@ -19,6 +20,17 @@ public class USCanadaAddress extends Address {
 	private Long id;
 	
 	@Column(name = "us_canada_address_number")
+=======
+@Table(name = "us_canada_address")
+public class USCanadaAddress extends Address {
+	
+	@Id
+	@Column(name = "us_canada_address_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "us_canada_address_number", length = 4, nullable = false)
+>>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 	private String number;
 	
 	@Override 

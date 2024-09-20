@@ -7,8 +7,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 import com.upoint.model.util.Image;
 
+<<<<<<< HEAD
 @Document(collection = "receivingOrder")
 @Component
+=======
+
+@Component
+@Document(collection = "receivingOrder")
+>>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 public class ReceivingOrder {
 	
 	@Id
@@ -24,10 +30,17 @@ public class ReceivingOrder {
 	private List <StockProduct> receivingProducts;
 	
 	
+<<<<<<< HEAD
 	private List<String> expectedProducts;
 	
 	
 	private List<Image> orderImages;
+=======
+	private List <String> expectedProducts;
+	
+	
+	private List <Image> orderImages;
+>>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 
 
 	public String getId() {
@@ -90,4 +103,8 @@ public class ReceivingOrder {
 	}
 	
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 }

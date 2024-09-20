@@ -17,6 +17,7 @@ import jakarta.persistence.Table;
 public class MexicanName extends Name {
 	
 	@Id
+<<<<<<< HEAD
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "mexican_name_id")
 	private Integer id;
@@ -25,11 +26,27 @@ public class MexicanName extends Name {
 	private String secondName;
 	 
 	@Column(name = "mexican_name_second_last_name", length = 20, nullable = false)
+=======
+	@Column(name = "mexican_name_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+
+	
+	@Column(name = "mexican_name_second_name", length = 20, nullable = true)
+	private String secondName;
+	
+	@Column(name = "mexican_name_second_last_name", length = 20, nullable = false )
+>>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 	private String secondLastName;
 	
 	
 	
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 	public Integer getId() {
 		return id;
 	}
