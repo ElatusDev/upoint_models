@@ -4,26 +4,20 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.test.context.ContextConfiguration;
-
 import com.upoint.model.hr.mx.MexicanName;
-import com.upoint.model.testapp.TestApplication;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 
-@ComponentScan(basePackages = {"com.upoint.model.hr"})
-@EntityScan(basePackages = {"com.upoint.model.hr"})
-@DataJpaTest
-@PropertySource("classpath:dev-config/dev-upoint_hr.properties")
-@ContextConfiguration(classes = TestApplication.class)
-public class MexicanNameModelTest {
+<<<<<<< HEAD
+
+
+public abstract class BaseMexicanNameModelTest {
+
+=======
+public class BaseMexicanNameModelTest {
+>>>>>>> 4123f36a8f5e01256fc0a3003e4aec9b028c7495
 	
 	@Autowired
 	private EntityManagerFactory factory;
@@ -46,6 +40,26 @@ public class MexicanNameModelTest {
 		mexicanName.setId(null);
 	}
 	
+<<<<<<< HEAD
+	private void executeTransaction(EntityManager manager, MexicanName mexicanName) {
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		manager.persist(mexicanName);
+		transaction.commit();
+		
+		
+	}
+	@Test
+	void givenMexicanNameIsValid_whenPersisting_ThenReturnId() {
+		
+		
+		Integer expectedId = 1;
+		
+		executeTransaction(manager, mexicanName);
+		
+		Assertions.assertEquals(expectedId, mexicanName.getId());
+	}
+=======
 	private void executeTransaction() {
 		EntityTransaction transaction = manager.getTransaction(); 
 		transaction.begin();
@@ -63,4 +77,5 @@ public class MexicanNameModelTest {
 		
 	
 	
+>>>>>>> 4123f36a8f5e01256fc0a3003e4aec9b028c7495
 }

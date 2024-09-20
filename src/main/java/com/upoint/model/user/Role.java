@@ -17,11 +17,17 @@ public class Role {
 	@Column(name = "role_name", nullable = false, length = 30)
 	private String name;
 	
-	@Column(name = "role_write_receiving_order_acces")
-	private Boolean writeReceivingOrderAccess;
+	@Column(name = "role_write_acces", nullable = false)
+	private Boolean writeAccess;
 	
-	@Column(name = "role_read_receiving_order_acces")
-	private Boolean readReceivingOrderAccess;
+	@Column(name = "role_read_acces", nullable = false)
+	private Boolean readAccess;
+	
+	@Column(name = "role_modify_acces", nullable = false)
+	private Boolean modifyAcces;
+	
+	@Column(name = "role_delete_acces", nullable = false)
+	private Boolean deleteAcces;
 	
 	
 	
