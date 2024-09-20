@@ -10,15 +10,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 
-<<<<<<< HEAD
-
-
-public abstract class BaseMexicanNameModelTest {
-
-=======
 public class BaseMexicanNameModelTest {
->>>>>>> 4123f36a8f5e01256fc0a3003e4aec9b028c7495
-	
+
 	@Autowired
 	private EntityManagerFactory factory;
 	
@@ -40,7 +33,6 @@ public class BaseMexicanNameModelTest {
 		mexicanName.setId(null);
 	}
 	
-<<<<<<< HEAD
 	private void executeTransaction(EntityManager manager, MexicanName mexicanName) {
 		EntityTransaction transaction = manager.getTransaction();
 		transaction.begin();
@@ -49,23 +41,23 @@ public class BaseMexicanNameModelTest {
 		
 		
 	}
+
 	@Test
 	void givenMexicanNameIsValid_whenPersisting_ThenReturnId() {
-		
-		
 		Integer expectedId = 1;
 		
 		executeTransaction(manager, mexicanName);
 		
 		Assertions.assertEquals(expectedId, mexicanName.getId());
 	}
-=======
+
 	private void executeTransaction() {
 		EntityTransaction transaction = manager.getTransaction(); 
 		transaction.begin();
 		manager.persist(mexicanName);
 		transaction.commit();
 	}
+
 	@Test
 	void givenMexicanNameIsValid_whenPersisting_thenReturnId() {
 		//init method provides valid object
@@ -73,9 +65,4 @@ public class BaseMexicanNameModelTest {
 		executeTransaction();
 		Assertions.assertEquals(expectedId, mexicanName.getId());;
 	}
-	
-		
-	
-	
->>>>>>> 4123f36a8f5e01256fc0a3003e4aec9b028c7495
 }

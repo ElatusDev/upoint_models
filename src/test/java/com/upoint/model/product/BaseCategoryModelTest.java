@@ -15,31 +15,17 @@ import jakarta.persistence.PersistenceException;
 
 
 
-<<<<<<< HEAD
 public abstract class BaseCategoryModelTest {
-=======
- 	public abstract class BaseCategoryModelTest {
->>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 	@Autowired
 	private EntityManagerFactory factory;
 	
 	@Autowired
 	private ApplicationContext context;
-<<<<<<< HEAD
 
 	@Autowired
 	private MsgError msgError;
-	
-=======
-	
-	@Autowired
-	private MsgError msgError;
-	
 
->>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 	private EntityManager manager;
-	
-
 	private Category category;
 	
 	@BeforeEach
@@ -61,58 +47,28 @@ public abstract class BaseCategoryModelTest {
 	private void executeTransaction(EntityManager manager, Category category) {
 		EntityTransaction transaction = manager.getTransaction();
 		transaction.begin();
-<<<<<<< HEAD
 		manager.persist(category);
 		for(Category child: category.getChildren()) {
 			manager.persist(child);
 		}
 		transaction.commit();
-		
-=======
-		 manager.persist(category);
-		 for(Category child: category.getChildren()) {
-			 manager.persist(child);
-		 }
-		 
-		 transaction.commit();
->>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 	}
 	
 	@Test
 	public void givenCategoryIsValid_whenPersisting_thenReturnId() {
 		//Category class should have @Entity annotation
-		
-		
 		executeTransaction(manager, category);
 		Assertions.assertNotNull(category.getId());
-<<<<<<< HEAD
-=======
-				
->>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 	}
 	
 	@Test
 	public void givenIdIsInvalid_whenPersisting_thenShouldThrowEx() {
-<<<<<<< HEAD
-		category.setId(1);
-		PersistenceException ex =  Assertions.assertThrows(PersistenceException.class, ()->{
-=======
-		
 		category.setId(1);
 		PersistenceException ex = Assertions.assertThrows(PersistenceException.class, () ->{
->>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
 			executeTransaction(manager, category);
 		});
 		
 		Assertions.assertEquals(msgError.getInvalidIdErr(Category.class.getName()), ex.getCause().getMessage());
 		
 	}
-<<<<<<< HEAD
 }
-
-
-=======
-		
-}
-
->>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
