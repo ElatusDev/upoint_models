@@ -13,24 +13,9 @@ import jakarta.persistence.Table;
 @Table(name = "mexican_address")
 public class MexicanAddress extends Address {
 	
-<<<<<<< HEAD
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "mexican_address_id")
-	private Long id;
-	
-	@Column(name = "mexican_address_interior_number")
-	private String interiorNumber;
-	
-	@Column(name = "mexican_address_exterior_number")
-	private String exteriorNumber;
-	
-	@Column(name = "mexican_addres_neighborhood")
-=======
-	
-	@Id
-	@Column(name = "mexican_address_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "mexican_address_interior_number", nullable = false, length = 4)
@@ -39,8 +24,7 @@ public class MexicanAddress extends Address {
 	@Column(name = "mexican_address_exterior_number", nullable = false, length = 4)
 	private String exteriorNumber;
 	
-	@Column(name = "mexican_address_neighborhood", nullable = false, length = 50)
->>>>>>> 3c61db79d39e73c63a840d46768a8c32edba28b7
+	@Column(name = "mexican_addres_neighborhood", nullable = false, length = 50)
 	private String neighborhood;
 	
 	@Override

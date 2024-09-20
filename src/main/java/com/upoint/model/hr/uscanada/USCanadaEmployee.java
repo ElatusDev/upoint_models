@@ -25,7 +25,7 @@ public class USCanadaEmployee extends Employee{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "us_canada_employee")
+	@Column(name = "us_canada_employee_id")
 	private Long id;
 	
 =======
